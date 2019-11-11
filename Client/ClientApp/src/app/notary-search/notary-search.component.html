@@ -1,0 +1,19 @@
+<h1>Notary Search Component</h1>
+<div>
+  <form>    
+    <input #searchItem name="searchItem" type="text" />
+    <input type="submit" (click)="getSearch(searchItem.value)" value="Search" />
+  </form>
+</div>
+
+<ng-template [ngIf]="searchResult" [ngIfElse]="notFound">
+  <div>
+    Item Found
+  </div>
+</ng-template>
+
+<ng-template #notFound>
+  <div>
+    Item Not Found
+  </div>
+</ng-template>
